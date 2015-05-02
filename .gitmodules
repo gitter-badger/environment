@@ -13,3 +13,6 @@
 [submodule "emacs/packages/s.el"]
 	path = emacs/packages/s.el
 	url = https://github.com/magnars/s.el.git
+[submodule "emacs/packages/emacs-leuven-theme"]
+	path = emacs/packages/emacs-leuven-theme
+	url = git://github.com/fniessen/emacs-leuven-theme.git

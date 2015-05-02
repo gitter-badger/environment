@@ -303,11 +303,11 @@ Otherwise, use `file-template-auto-insert'."
     (setq template-name
           (catch 'found
             (while mapping-alist
-              (if (string-match (caar mapping-alist) (buffer-name))
+              (if (string-match (caar mapping-alist) (buffer-file-name))
                   (throw 'found (cdar mapping-alist))
                 (setq mapping-alist (cdr mapping-alist))))))
     (if (not template-name)
-        (message (format "No template defined for file type \"%s\"" (buffer-name)))
+        (message (format "No template defined for file type \"%s\"" (buffer-file-name)))
       (setq template (locate-file template-name (if file-template-search-current-dir
                                                     (cons "." file-template-paths)
                                                   file-template-paths)))
