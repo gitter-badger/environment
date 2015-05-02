@@ -2,7 +2,7 @@
   - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.spacemacs: emacs/.spacemacs
+    ~/.emacs.d: emacs/
     ~/.ghci: haskell/.ghci
     ~/.cabal/config:
       create: true
