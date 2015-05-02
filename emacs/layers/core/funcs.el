@@ -67,3 +67,11 @@
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
       (process-send-string proc text)
       (process-send-eof proc))))
+
+;;; Various stuff
+;; ==============
+
+(defun d12/reload-config ()
+  "Reloads config. Actually it loads core layer."
+  (interactive)
+  (d12/load-layer "core"))
