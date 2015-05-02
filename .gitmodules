@@ -1,3 +1,15 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "emacs/packages/use-package"]
+	path = emacs/packages/use-package
+	url = https://github.com/jwiegley/use-package.git
+[submodule "emacs/packages/bind-key"]
+	path = emacs/packages/bind-key
+	url = https://github.com/emacsattic/bind-key.git
+[submodule "emacs/packages/dash.el"]
+	path = emacs/packages/dash.el
+	url = https://github.com/magnars/dash.el.git
+[submodule "emacs/packages/s.el"]
+	path = emacs/packages/s.el
+	url = https://github.com/magnars/s.el.git
