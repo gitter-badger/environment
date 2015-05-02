@@ -40,7 +40,7 @@
 ;; --------------
 
 (defvar d12/custom-layers
-  '()
+  '("file-template")
   "List of custom layers to load.")
 
 ;;; Core layer
