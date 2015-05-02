@@ -39,10 +39,12 @@
 ;;; Custom layers
 ;; --------------
 
-(defvar d12/custom-layers
-  '("ui"
-    "file-template")
+(defvar d12/custom-layers '()
   "List of custom layers to load.")
+
+(setq d12/custom-layers
+      '("file-template"
+        "org"))
 
 ;;; Core layer
 ;; -----------

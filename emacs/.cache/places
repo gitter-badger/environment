@@ -1,0 +1,18 @@
+;;; -*- coding: utf-8 -*-
+(("/Users/d12frosted/Dropbox/org/gtd.org" . 1338)
+ ("/Users/d12frosted/.environment/emacs/layers/core/configs.el" . 830)
+ ("/Users/d12frosted/.emacs.d/layers/org/configs.el" . 1630)
+ ("/Users/d12frosted/Dropbox/org/journal/2015-04-16" . 200)
+ ("/Users/d12frosted/Dropbox/org/journal/2015-05-02" . 3022)
+ ("/Users/d12frosted/.emacs.d/layers/org/funcs.el" . 466)
+ ("/Users/d12frosted/.environment/emacs/init.el" . 641)
+ ("/Users/d12frosted/.environment/emacs/layers/org/configs.el" . 763)
+ ("/Users/d12frosted/.emacs.d/packages/org-mode/lisp/org.el" . 973227)
+ ("/Users/d12frosted/.emacs.d/packages/org-bullets/org-bullets.el" . 821)
+ ("/Users/d12frosted/.environment/emacs/layers/core/funcs.el" . 1026)
+ ("/Users/d12frosted/.environment/emacs/layers/org/"
+  (dired-filename . "/Users/d12frosted/.environment/emacs/layers/org/.."))
+ ("/Users/d12frosted/.environment/emacs/layers/"
+  (dired-filename . "/Users/d12frosted/.environment/emacs/layers/core"))
+ ("/Users/d12frosted/.environment/emacs/layers/core/"
+  (dired-filename . "/Users/d12frosted/.environment/emacs/layers/core/configs.el")))

@@ -15,14 +15,9 @@
 ;;; Files and Directories
 ;; ======================
 
-(defun d12/directory-dirs (directory &optional full)
+(defun d12/directory-dirs (directory)
   "Return a list of names of directories in DIRECTORY
-  excluding '.' and '..'.
-
-  If FULL is non-nil, return absolute file names.
-  Otherwise return names that are relative to the specified
-  directory."
-
+  excluding '.' and '..'."
   (unless (file-directory-p directory)
     (error "Not a directory `%s'" directory))
   (let* ((dir (directory-file-name directory))
@@ -35,43 +30,33 @@
 	    (add-to-list 'dirs file)))))
     dirs))
 
-(defun set-auto-saves ()
-  "Put autosave files (ie #foo#) in one place, *not*
- scattered all over the file system!"
-  (defvar autosave-dir
-    (concat "/tmp/emacs_autosaves/" (user-login-name) "/"))
-
-  (make-directory autosave-dir t)
-
-  (defun auto-save-file-name-p (filename)
-    (string-match "^#.*#$" (file-name-nondirectory filename)))
-
-  (defun make-auto-save-file-name ()
-    (concat autosave-dir
-	    (if buffer-file-name
-		(concat "#" (file-name-nondirectory buffer-file-name) "#")
-	      (expand-file-name
-	       (concat "#%" (buffer-name) "#")))))
-
-  (defvar backup-dir (concat "/tmp/emacs_backups/" (user-login-name) "/"))
-  (setq backup-directory-alist (list (cons "." backup-dir))))
-
-;;; OS X specific
-;; ==============
-
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
-
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
+(defun d12/directory-dirs-r (directory)
+  "Return a list of names of directories in DIRECTORY
+  and all it's subdirectories excluding '.' and '..'."
+  (let ((dirs '()))
+    (dolist (dir (d12/directory-dirs directory))
+      (setq dirs (append (cons dir
+                               (d12/directory-dirs-r dir))
+                         dirs)))
+    dirs))
 
 ;;; Various stuff
 ;; ==============
 
-(defun d12/reload-config ()
-  "Reloads config. Actually it loads core layer."
+(defun d12/toggle-fullscreen ()
+  "Cycle thorugh full screen options by rule 'nil -> maximized -> fullboth -> nil'."
   (interactive)
-  (d12/load-layer "core"))
+  (let ((x (frame-parameter nil 'fullscreen)))
+    (set-frame-parameter nil 'fullscreen
+			 (cond ((not x) 'maximized)
+			       ((eq x 'maximized) 'fullboth)
+			       (t nil)))))
+
+(defmacro d12|diminish (mode dim)
+  "Diminish MODE name in mode line to DIM."
+  `(eval-after-load 'diminish '(diminish ',mode ,dim)))
+
+(defun d12/reload-config ()
+  "Reloads config."
+  (interactive)
+  (load (concat d12/load-dir "init.el")))

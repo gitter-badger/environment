@@ -16,3 +16,12 @@
 [submodule "emacs/packages/emacs-leuven-theme"]
 	path = emacs/packages/emacs-leuven-theme
 	url = git://github.com/fniessen/emacs-leuven-theme.git
+[submodule "emacs/packages/org-mode"]
+	path = emacs/packages/org-mode
+	url = git://orgmode.org/org-mode.git
+[submodule "emacs/packages/org-bullets"]
+	path = emacs/packages/org-bullets
+	url = https://github.com/sabof/org-bullets.git
+[submodule "emacs/packages/org-journal"]
+	path = emacs/packages/org-journal
+	url = git@github.com:d12frosted/org-journal.git

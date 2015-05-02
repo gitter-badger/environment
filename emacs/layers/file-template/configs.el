@@ -17,7 +17,7 @@
   :init
   (autoload 'file-template-auto-insert "file-template" nil t)
   (autoload 'file-template-find-file-not-found-hook "file-template" nil t)
-  (setq file-template-insert-automatically 'ask
+  (setq file-template-insert-automatically t
         file-template-full-name d12/name
         file-template-paths '()
         user-mail-address d12/email)
